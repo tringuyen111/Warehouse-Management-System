@@ -11,7 +11,7 @@ interface Activity {
   title: string
   description: string
   time: string
-  status: "success" | "warning" | "error" | "info"
+  severity: "success" | "warning" | "error" | "info"
 }
 
 const activities: Activity[] = [
@@ -21,7 +21,7 @@ const activities: Activity[] = [
     title: "New goods receipt #GR-001",
     description: "150 units of Product ABC received from Supplier XYZ",
     time: "2 hours ago",
-    status: "success",
+    severity: "success",
   },
   {
     id: "2",
@@ -29,7 +29,7 @@ const activities: Activity[] = [
     title: "Transfer order #TO-045 completed",
     description: "50 units moved from Warehouse A to Warehouse B",
     time: "4 hours ago",
-    status: "success",
+    severity: "success",
   },
   {
     id: "3",
@@ -37,7 +37,7 @@ const activities: Activity[] = [
     title: "Low stock alert",
     description: "Product ABC-123 is below minimum stock level",
     time: "6 hours ago",
-    status: "warning",
+    severity: "warning",
   },
   {
     id: "4",
@@ -45,7 +45,7 @@ const activities: Activity[] = [
     title: "Goods issue #GI-089 approved",
     description: "75 units issued to Production Department",
     time: "8 hours ago",
-    status: "success",
+    severity: "success",
   },
   {
     id: "5",
@@ -53,7 +53,7 @@ const activities: Activity[] = [
     title: "New user registered",
     description: "John Doe added as Warehouse Operator",
     time: "1 day ago",
-    status: "info",
+    severity: "info",
   },
 ]
 
@@ -76,8 +76,8 @@ function getActivityIcon(type: Activity["type"]) {
   }
 }
 
-function getStatusColor(status: Activity["status"]) {
-  switch (status) {
+function getSeverityColor(severity: Activity["severity"]) {
+  switch (severity) {
     case "success":
       return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
     case "warning":
@@ -107,7 +107,7 @@ export function RecentActivities() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between">
                   <p className="text-sm font-medium text-foreground">{activity.title}</p>
-                  <Badge className={getStatusColor(activity.status)}>{activity.status}</Badge>
+                  <Badge className={getSeverityColor(activity.severity)}>{activity.severity}</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">{activity.description}</p>
                 <p className="text-xs text-muted-foreground mt-2">{activity.time}</p>
