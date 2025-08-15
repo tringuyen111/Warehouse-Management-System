@@ -1,4 +1,4 @@
-import { getProduct } from "@/lib/api/products"
+import { getProduct } from "@/lib/api/products-server"
 import { getSuppliers } from "@/lib/api/suppliers"
 import { getInventoryTransactions } from "@/lib/api/inventory"
 import { ProductDetails } from "@/components/products/product-details"

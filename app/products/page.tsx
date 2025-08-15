@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { getProducts } from "@/lib/api/products"
+import { getProducts } from "@/lib/api/products-server"
 import { getSuppliers } from "@/lib/api/suppliers"
 import { ProductsStats } from "@/components/products/products-stats"
 import { ProductsList } from "@/components/products/products-list"
