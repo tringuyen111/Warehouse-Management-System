@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ProductsAPI } from "@/lib/api/products"
+import { ProductsAPI } from "@/lib/api/products-client"
 import { Package, AlertTriangle, TrendingUp, Archive } from "lucide-react"
 
 interface ProductStats {
