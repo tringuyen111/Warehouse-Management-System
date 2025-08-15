@@ -22,7 +22,9 @@ export default async function ReportsPage({ searchParams }: ReportsPageProps) {
       <ReportsHeader />
 
       {/* Filters */}
-      <ReportsFilters />
+      <Suspense fallback={<div>Đang tải bộ lọc...</div>}>
+        <ReportsFilters />
+      </Suspense>
 
       {/* Export Actions */}
       <ExportActions />
